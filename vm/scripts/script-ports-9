@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':389 '; then
+echo "[WARNING]Port 389 open. LDAP transfers data in clear text."
+echo "[RECOMMEND]Closing port 389. Use LDAPS"
+fi

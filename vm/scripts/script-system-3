@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo_group_info=$(getent group sudo)
+
+num_users=$(echo "$sudo_group_info" | cut -d: -f4 | tr ',' '\n' | wc -w)
+
+if [ $num_users -gt 1 ]; then
+echo "[WARNING]$num_users - users are in the sudo group"
+echo "[RECOMMEND]Use only one administrator in the sudo group"
+fi

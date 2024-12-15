@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':23 '; then
+echo "[WARNING]Port 23 open. Telnet transmits data in clear text, which makes it vulnerable to data interception"
+echo "[RECOMMEND]Closing port 23. For secure remote access you should use SSH"
+fi

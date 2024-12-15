@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':25 '; then
+echo "[WARNING]Port 25 open. An open SMTP port can be used by attackers to send spam from your server."
+echo "[RECOMMEND]If the server is not used to send mail, close port 25"
+fi

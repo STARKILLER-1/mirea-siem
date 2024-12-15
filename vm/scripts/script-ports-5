@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':69 '; then
+echo "[WARNING]Port 69 open. TFTP does not have built-in encryption or authentication mechanisms"
+echo "[RECOMMEND]Closing port 23. For secure remote access you should use SSH"
+fi

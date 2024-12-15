@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':143 '; then
+echo "[WARNING]Port 143 open. IMAP transfers data in clear text"
+echo "[RECOMMEND]Closing port 143. It is recommended to use IMAPS for secure mail access"
+fi

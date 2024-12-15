@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':80 '; then
+echo "[WARNING]Port 80 open. HTTP transfers data in clear text."
+echo "[RECOMMEND]Closing port 80. Use HTTPS"
+fi

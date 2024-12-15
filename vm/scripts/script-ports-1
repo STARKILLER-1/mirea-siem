@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':21 '; then
+echo "[WARNING]Port 21 open. FTP transfers data in clear text, which makes it vulnerable to data interception"
+echo "[RECOMMEND]Closing port 21"
+fi

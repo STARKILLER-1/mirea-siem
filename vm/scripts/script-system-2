@@ -1,0 +1,20 @@
+#!/bin/bash 
+ 
+warnings="[WARNING]" 
+ 
+for dir in /home/*; do 
+  if [ -d "$dir" ]; then 
+    permissions=$(stat -c "%A" "$dir") 
+     
+    if [[ ${permissions:7:1} != "-" ]]; then 
+      warnings+="$dir " 
+    fi 
+  fi
+done 
+warnings+=" open to all users"
+
+if [[ "$warnings" != "[WARNING] open to all users" ]]; then
+  echo -e "$warnings"
+  echo "[RECOMMEND]Сhange the permissions for the specified folders so that only their owner has access to them" 
+fi
+

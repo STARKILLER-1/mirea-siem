@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':110 '; then
+echo "[WARNING]Port 110 open. POP3 transmits data in clear text"
+echo "[RECOMMEND]Closing port 110. Use POP3S to access your mail securely"
+fi

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+shm_permissions=$(ls -ld /run/shm | cut -c 2-10)
+if [ $shm_permissions == "rwxrwxrwx" ]; then
+echo "[Warning]The /run/shm directory is readable and writable for running programs by users!";
+echo "[RECOMMEND]change the permissions so that only root and system users can make changes to this directory"
+fi
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':53 '; then
+echo "[WARNING]Port 53 open. DNS servers can be the target of DDoS attacks"
+echo "[RECOMMEND]If the server is not a DNS server, close port 53"
+fi

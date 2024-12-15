@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if ss -tuln | grep -q ':445 '; then
+echo "[WARNING]Port 445 open. The SMB port can be used to distribute malware and attacks"
+echo "[RECOMMEND]Closing port 445"
+fi

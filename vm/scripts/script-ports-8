@@ -1,0 +1,14 @@
+#!/bin/bash 
+ 
+check_port() 
+{ 
+  local port=$1 
+  local service=$2 
+  if ss -tulnp | grep -q ":$port.*$service"; then 
+  echo "[WARNING]Port $port open. SNMP can be used to obtain information about the system and network devices."
+  echo "[RECOMMEND]Closing port $port"
+  fi 
+} 
+
+check_port 161 snmpd 
+check_port 162 snmptrapd
